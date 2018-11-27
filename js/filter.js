@@ -10,7 +10,7 @@ $(document).ready(function() {
   // Get the list of locations that match our event
   var ar = JSON.parse(localStorage.getItem('availableRooms'));
   var arIndex = JSON.parse(localStorage.getItem('arIndex'));
-  var indexes = JSON.parse(localStorage.getItem('indexes')); 
+  var indexes = JSON.parse(localStorage.getItem('indexes'));
 
   var filterRooms = ar[arIndex.indexOf(text.toLowerCase())];
   var filterIndexes = indexes[arIndex.indexOf(text.toLowerCase())];
@@ -27,12 +27,33 @@ $(document).ready(function() {
       document.getElementById(names[i]).placeholder = "";
 
     }
+    document.getElementById('location').innerHTML =  myFilters[0]['location'];
+    chosenLocation =  myFilters[0]['location'];
   }
 
+  var locString = [];
+  var locationArray = [];
+
+  // compile the template
+  var source   = $("#option-script").html();
+  var template = Handlebars.compile(source);
+
+  var parentDiv = $("#options");
+  for (var i = 0; i < filterRooms.length; i++) {
+    var string = filterRooms[i]['location'];
+    if(locString.indexOf(string) == -1){
+      var add = {'id':string.replace(" ", "-"), 'location':string};
+      locString.push(string);
+      locationArray.push(add);
+      var curHtml = template(add);
+      parentDiv.append(curHtml);
+    }
+  }
 });
 
+var chosenLocation;
 function search(){
-  var loc = $('#location').val();
+  var loc = chosenLocation;
   var date = $('#date').val();
   var hours =$('#hours').val();
   var guest = $('#guest').val();
@@ -61,4 +82,17 @@ function search(){
   localStorage.setItem('filters', JSON.stringify(filters));
 
   window.location.href='./search.html';
+}
+
+// Drop down menu function
+function dropdown(){
+  console.log('toggling');
+  document.getElementById("options").classList.toggle("show");
+}
+
+function chosen(id){
+  chosenLocation = id.replace("-"," ");
+  document.getElementById('location').innerHTML = id.replace("-"," ");
+  document.getElementById("options").classList.toggle("show");
+
 }

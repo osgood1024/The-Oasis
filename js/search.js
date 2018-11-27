@@ -21,6 +21,7 @@ $(document).ready(function() {
     }
   }
 
+  // updating fliters
   var myFilters = JSON.parse(localStorage.getItem('filters'));
   if(myFilters != null){
     var names = ['location','date', 'hours', 'guest', 'maxCost', 'minCost'];
@@ -29,8 +30,31 @@ $(document).ready(function() {
       document.getElementById(names[i]).placeholder = "";
 
     }
+    document.getElementById('location').innerHTML =  myFilters[0]['location'];
+    chosenLocation =  myFilters[0]['location'];
   }
   console.log(results);
+
+  var locString = [];
+  var locationArray = [];
+
+  // compile the template
+  var source   = $("#option-script").html();
+  var template = Handlebars.compile(source);
+
+  var availableRooms = JSON.parse(localStorage.getItem('filterRooms'));
+  var parentDiv = $("#options");
+  console.log('availableRooms: ' + availableRooms.length);
+  for (var i = 0; i < availableRooms.length; i++) {
+    var string = availableRooms[i]['location'];
+    if(locString.indexOf(string) == -1){
+      var add = {'id':string.replace(" ", "-"), 'location':string};
+      locString.push(string);
+      locationArray.push(add);
+      var curHtml = template(add);
+      parentDiv.append(curHtml);
+    }
+  }
 
   if(results.length != 0){
     var source   = $("#results-template").html();
@@ -64,6 +88,7 @@ $(document).ready(function() {
       var curHtml = template(curData);
       parentDiv.append(curHtml);
     }
+
     document.getElementById('first-row').style.display = 'none';
     document.getElementById('second-row').style.display = 'none';
     document.getElementById('noResults').style.display = 'inline-block';
@@ -71,7 +96,7 @@ $(document).ready(function() {
 });
 
 function search(){
-  var loc = $('#location').val();
+  var loc = chosenLocation;
   var date = $('#date').val();
   var hours =$('#hours').val();
   var guest = $('#guest').val();
@@ -100,4 +125,18 @@ function search(){
   localStorage.setItem('filters', JSON.stringify(filters));
 
   window.location.href='./search.html';
+}
+
+var chosenLocation;
+
+// Drop down menu function
+function dropdown(){
+  console.log('toggling');
+  document.getElementById("options").classList.toggle("show");
+}
+
+function chosen(id){
+  chosenLocation = id.replace("-"," ");
+  document.getElementById('location').innerHTML = id.replace("-"," ");
+  document.getElementById("options").classList.toggle("show");
 }

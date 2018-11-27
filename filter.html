@@ -90,10 +90,16 @@
       <h1 id="header"></h1>
     </div>
     <div>
-      <form href="./search.html" id="filters" >
+      <div href="./search.html" id="filters" >
         <ul>
           <li id="location-search">
-            Location: <input required id="location" name="location" type="text" required placeholder="San Diego" value=""/>
+            <button id="location" onclick="dropdown()">Location</button>
+            <script  id="option-script" type="text/x-handlebars-template">
+              <a href="#" id={{id}} onclick="chosen(this.id)">{{location}}</a>
+            </script>
+
+            <div class="drop-content" id="options">
+            </div>
           </li>
           <li>
             Date: <input required id="date" name ="date" type="date" required placeholder="mm/dd/yyyy" value=""  />
@@ -112,7 +118,7 @@
           </li>
         </ul>
 
-      </form>
+      </div>
       <button onclick="search()">Submit</button>
 
     </div>

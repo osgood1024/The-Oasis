@@ -22,8 +22,14 @@
                   >&times;</span>
             <h1>Filters</h1>
             <ul>
-              <li>
-                Location: <input required id="location" name="location" type="text" required placeholder="San Diego" value=""/>
+              <li id="location-search">
+                <button id="location" onclick="dropdown()">Location</button>
+                <script  id="option-script" type="text/x-handlebars-template">
+                  <a style="color:black;" href="#" id={{id}} onclick="chosen(this.id)">{{location}}</a>
+                </script>
+
+                <div class="drop-content" style="margin-left:16%" id="options">
+                </div>
               </li>
               <li>
                 Date: <input required id="date" name ="date" type="date" required placeholder="mm/dd/yyyy" value=""  />
