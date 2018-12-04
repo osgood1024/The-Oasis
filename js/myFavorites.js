@@ -72,18 +72,10 @@ $(document).ready(function() {
 
 });
 
-function loggedIn(){
-  localStorage.setItem("user", "loggedIn");
-}
-function loggedOut(){
-  localStorage.removeItem("user");
-  window.location.href='#';
-
-}
 if(localStorage.getItem("user") !== null){
   //document.getElementById('loginbtn').style.display='none';
   //document.getElementById('signupbtn').style.display='none';
-  document.getElementById('logoutbtn').style.display='inline-block';
+  document.getElementById('btnLogOut').style.display='inline-block';
 }
 
 var index_details = [];

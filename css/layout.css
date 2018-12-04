@@ -212,6 +212,13 @@ hr {
   background-color: white;
 }
 
+/* Favorite classes */
+.noFavs{
+  padding-left: 1%;
+  margin: 300px 100px 0px 100px;
+  display: none;
+}
+
 /* Filter classes */
 .drop-content{
   display: none;
