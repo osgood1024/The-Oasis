@@ -29,7 +29,7 @@ var weddingRooms = [
   'A rustic oceanfront cottage located next to The Scripps in UCSD with beautiful oceanview' +
    'allows guests to hold events ranging from wedding receptions, corporate events, business meetings and etc.' +
     'The cottage also includes both indoor and outdoors seatings.' ,
-     'price': '3000', 'location':'UCSD', 'capacity':'400', 'id':'scripps', 'stars':'4', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'}
+     'price': '3000', 'location':'San Diego', 'capacity':'400', 'id':'scripps', 'stars':'4', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'}
 ];
 
 var weddingIndex = ['ballroom','gaslamp','scripps'];
@@ -46,7 +46,7 @@ var corporateRooms = [
    {'name':'The Loft','image':'loft'
 ,'description':'The Loft is the university’s performance lounge with modern design. The Loft is available for private rental and students are eligible for a discount, for more information please contact jimhalbert@ucsd.edu' ,
 'price': '500',
-  'location': 'UCSD', 'capacity':'200', 'id':'UCSD', 'stars':'3', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'}
+  'location':'San Diego', 'capacity':'200', 'id':'UCSD', 'stars':'3', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'}
 ];
 
 var corporateIndex = ['BH','hyatt','Luxe','UCSD'];
@@ -127,8 +127,8 @@ var workshopRooms = [
   'price':'800', 'location': 'San Diego', 'capacity':'400', 'id': 'liberty', 'stars':'5', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783}'},
   {'name':'The Loft','image':'loft'
 ,'description':'The Loft is the university’s performance lounge with modern design. The Loft is available for private rental and students are eligible for a discount, for more information please contact jimhalbert@ucsd.edu' , 'price': '500',
- 'location': 'UCSD', 'capacity':'200', 'id':'UCSD', 'stars':'3', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'},
- {'name':'Queen Bee’s Art and Cultural Center','image': 'queen' ,'description':'A multipurpose venue located in North Park, San Diego.' +
+ 'location': 'San Diego', 'capacity':'200', 'id':'UCSD', 'stars':'3', 'contemail':'jimhalbert@ucsd.edu', 'contnumber':'(925) 283-2783'},
+ {'name':'Queen Bee’s Cultural Center','image': 'queen' ,'description':'A multipurpose venue located in North Park, San Diego.' +
   ' The venue allow guests to host a varieties of events ranging from workshops, business meetings to wedding party.' +
  '  The interior of the main hall is decorated with beautiful wall arts and also features a main-stage with bamboo hardwood dance-floor. ' +
    'The venue also has a smaller studio at the back, which is perfect for smaller parties.' , 'price': '1000',

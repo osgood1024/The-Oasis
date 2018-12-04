@@ -31,8 +31,8 @@ $(document).ready(function() {
 function addtoFavorite(name){
   console.log(name);
   // get all possible rooms
-  var availableRooms = JSON.parse(localStorage.getItem('filterRooms'));
-  var indexes = JSON.parse(localStorage.getItem('filterIndexes'));
+  var availableRooms = JSON.parse(localStorage.getItem('choices'));
+  var indexes = JSON.parse(localStorage.getItem('choiceIndexes'));
 
   // get list of favorites
   var favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -87,8 +87,8 @@ function addtoFavorite(name){
 /* Function that will lead to details page */
 function getDetails(id){
   // Get array of rooms and indexes
-  var allRooms = JSON.parse(localStorage.getItem('filterRooms'));
-  var index = JSON.parse(localStorage.getItem('filterIndexes'));
+  var allRooms = JSON.parse(localStorage.getItem('choices'));
+  var index = JSON.parse(localStorage.getItem('choiceIndexes'));
 
   /* Get the room */
   var loc = allRooms[index.indexOf(id)];

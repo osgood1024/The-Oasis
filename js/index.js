@@ -39,11 +39,13 @@ $(document).ready(function() {
     var curHtml = template(curData);
     parentDiv.append(curHtml);
   }
+
+  localStorage.setItem('filterRooms',null);
 });
 
 
 // set up filtering function
 function filter(id){
   localStorage.setItem('event',id);
-  window.location.href="./filter.html";
+  window.location.href="./search.html";
 }
