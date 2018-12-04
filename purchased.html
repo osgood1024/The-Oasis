@@ -11,7 +11,7 @@
     </div>
 
     <script id="event-template" type="text/x-handlebars-template">
-      <div class="event">
+      <div style="width:90%" class="event">
           <img class="event-image" src="./images/{{image}}.jpg" />
           <div class="info" style="width:90%">
             <h3><a href="./checkout.html">{{name}}</a></h3>
@@ -27,6 +27,14 @@
       <div>
         <h1>Thank you for your purchase!</h1>
         <span>
+          Total Price:
+          <br />
+          ${{price}}
+          <br />
+          Date:
+          <br />
+          {{date}}
+          <br />
           Your contact info:
           <br />
           {{email}}
@@ -44,10 +52,13 @@
         </span>
       </div>
     </script>
-    <div id="event-details">
+    <div style="display:flex">
+      <div style="width:25%" id="event-details">
 
-    </div>
-    <div id="details">
+      </div>
+      <div id="details">
+
+      </div>
 
     </div>
     <div>

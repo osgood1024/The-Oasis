@@ -1,11 +1,14 @@
-var paymentInfo = JSON.parse(localStorage.getItem('payment'))[0];
+var paymentInfo = JSON.parse(localStorage.getItem('payment'));
 
 $(document).ready(function() {
+  var preresult = JSON.parse(localStorage.getItem('detailLocation'));
 
   // compile the template
   var card = paymentInfo['card'];
   var replacementCard = "xxxxxxx" + card.substring(card.length-4);
   var result ={
+    'date':paymentInfo['date'],
+    'price':paymentInfo['price'],
     'email':paymentInfo['email'],
     'phone':paymentInfo['phone'],
     'card':replacementCard,
@@ -20,12 +23,10 @@ $(document).ready(function() {
   var curHtml = template(curData);
   parentDiv.prepend(curHtml);
 
-  var preresult = JSON.parse(localStorage.getItem('detailLocation'));
   var source   = $("#event-template").html();
   var template = Handlebars.compile(source);
   var parentDiv = $("#event-details");
   var curData = preresult;
   var curHtml = template(curData);
   parentDiv.prepend(curHtml);
-
 });

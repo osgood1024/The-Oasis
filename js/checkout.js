@@ -5,14 +5,8 @@ $(document).ready(function() {
 
   /* Get necessary values */
   var preresult = JSON.parse(localStorage.getItem('detailLocation'));
-  var filters = JSON.parse(localStorage.getItem('filters'));
   var extras = JSON.parse(localStorage.getItem('extras'));
 
-
-  var venue = parseInt(filters[0]['hours']) *
-      parseInt(preresult['price'].replace(/\,/g,''));
-
-  var total = venue;
   var title = "";
   var e1 = "";
   var e2 = "";
@@ -43,16 +37,12 @@ $(document).ready(function() {
     'name': preresult['name'],
     'price': preresult['price'],
     'location': preresult['location'],
-    'hours': filters[0]['hours'],
-    'date': filters[0]['date'],
     'image': preresult['image'],
-    'venue':venue,
     'service-title':title,
     'service1':e1,
     'service2':e2,
     'service3':e3,
     'service4':e4,
-    'total': total,
     'id':preresult['id']
 
   };
@@ -67,9 +57,11 @@ $(document).ready(function() {
 
   // Get user and email field in the document
   var user = JSON.parse(localStorage.getItem('user'));
-  var em = document.getElementById('host-email');
+  var em = document.getElementById('email');
   if(user != null){
     em.value = user['email'];
+  }else{
+    document.getElementById('notsignedin').style.display="inline";
   }
 
 });
@@ -86,15 +78,19 @@ function purchase(){
     return false;
   }
 
+  var p = parseInt(result['price'].replace(",","")) * parseInt($('#hours').val());
+  var date = $('#date').val();
+  var price = p;
   var email = $('#email').val();
   var phone = $('#phone').val();
   var card =$('#card').val();
   var exp = $('#exp').val();
   var ccv = $('#ccv').val();
 
-  var paymentInfo = [
-    {'email':email,'phone':phone, 'card':card, 'exp':exp, 'ccv':ccv}
-  ];
+  result['price'] = p;
+  result['date'] = date;
+  var paymentInfo ={'date':date, 'hours':hours, 'price':p,
+          'email':email,'phone':phone, 'card':card, 'exp':exp, 'ccv':ccv};
 
   localStorage.setItem('payment', JSON.stringify(paymentInfo));
   localStorage.setItem('extras',null);

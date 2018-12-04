@@ -3,7 +3,6 @@
 
 /* Prepares the document by changing all favorite into 'remove from favorite' */
 $(document).ready(function() {
-
   // gets favorite
   var favorites = JSON.parse(localStorage.getItem('favorites'));
 
@@ -12,12 +11,10 @@ $(document).ready(function() {
 
     // If we have favorites, set the location button to 'remove from favorite'
     if( favorites != null){
-      console.log('Changing innerHTML');
 
       for( var i = 0; i <favorites.length; i=i+1){
         var id = favorites[i]["id"]+"Fav";
         if(document.getElementById(id) != null){
-          console.log('Changing innerHTML');
           document.getElementById(id).innerHTML = "Remove from Favorite";
         }
       }

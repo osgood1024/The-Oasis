@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -100,9 +100,9 @@
         </div>
       <div class="event-info" style="width:25%">
         <span>
-          Date: {{date}}
+          Date: <input type="date" id="date" />
           <br />
-          Hours: {{hours}}
+          Hours: <input type="number" id="hours" min="1" max="24" />
           <br />
           ${{price}} an hour
           <br />
@@ -121,20 +121,16 @@
 
           {{service4}}
 
-          <br />
-          Venue: ${{venue}}
-          <br />
-          Total: ${{total}}
-
         </span>
       </div>
     </script>
     <div id="details" class="checkout" style="display:flex">
       <div class="checkout-info">
+        <h5 id="notsignedin" style="display:none">You will need to log in before purchase</h5>
         <div style="display: inherit;">
         <h3 style="margin:0px">Begin Checkout</h3>
         </div>
-        <div method="get">
+        <div>
           <ul>
             <li>
               <input id="email" type="text" placeholder="Email" size="25px" />
