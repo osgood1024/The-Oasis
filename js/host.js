@@ -1,9 +1,11 @@
-var availableRooms = JSON.parse(localStorage.getItem('availableRooms'));
-var indexes = JSON.parse(localStorage.getItem('indexes'));
-var arIndex = JSON.parse(localStorage.getItem('arIndex'));
-
 // List the location
 function list(){
+
+  // Get list of availableRooms and indexes
+  var availableRooms = JSON.parse(localStorage.getItem('availableRooms'));
+  var indexes = JSON.parse(localStorage.getItem('indexes'));
+
+  var arIndex = JSON.parse(localStorage.getItem('arIndex'));
   var listed = JSON.parse(localStorage.getItem('listed'));
 
   if(JSON.parse(localStorage.getItem('user')) == null){
@@ -25,6 +27,8 @@ function list(){
   var contnumber = $('#host-number').val();
   var contemail = $('#host-email').val();
 
+
+  // Create the new location
   var added = {'name':name,'image':'template','description':description, 'price': price,
   'location': location, 'capacity':capacity, 'id':id, 'stars':0, 'contemail':contemail, 'contnumber':contnumber};
 
@@ -35,7 +39,9 @@ function list(){
   // iterate through inputs, adding them to the event array
   for( var i = 0; i < targetArray.length; i++){
     if( targetArray[i].checked){
+      console.log(targetArray[i]['id']);
       var iter = arIndex.indexOf(targetArray[i]['id']);
+      console.log(iter);
       availableRooms[iter].push(added);
       indexes[iter].push(added['id']);
     }

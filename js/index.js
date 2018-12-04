@@ -1,4 +1,4 @@
-
+localStorage.setItem('rIndex', Math.floor(Math.random() * 8));
 /* Hardcoded first activities */
 var firstActivities = [
   {'caption': 'Party', 'actImage':'./images/party.jpg'},

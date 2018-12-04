@@ -1,8 +1,5 @@
-var favs = document.getElementById('favorites');
-var availableRooms = JSON.parse(localStorage.getItem('filterRooms'));
-var indexes = JSON.parse(localStorage.getItem('filterIndexes'));
-var favorites = JSON.parse(localStorage.getItem('favorites'));
 
+var favorites = JSON.parse(localStorage.getItem('favorites'));
 
 $(document).ready(function() {
   var favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -71,24 +68,5 @@ function addtoFavorite(name){
 
     document.getElementById(name+"Fav").innerHTML = "Favorite";
 
-  }
-}
-
-/* Function that will lead to details page */
-function getDetails(id){
-  /* Get the room */
-  var loc = availableRooms[indexes.indexOf(id)];
-
-  /* Set detail location */
-  localStorage.setItem('detailLocation',JSON.stringify(loc));
-  localStorage.setItem('prev',document.URL);
-  window.location.href='./details.html';
-}
-if(favs != null){
-  favs.onclick = function(){
-    if(localStorage.getItem("user") != null){
-      window.location='./myFavorites.html';
-      return false;
-    }
   }
 }

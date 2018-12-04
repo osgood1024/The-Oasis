@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+  // Changing a header
+  var text = localStorage.getItem('event');
+  //small change for text
+  if(text === "Corporate"){
+    text = "corporate event";
+  }
+  var header = document.getElementById('book');
+  header.innerHTML = "Book these spaces for your " + text.toLowerCase() + "!"
+
   // Get locations that match filters
   var results =[];
   var filters = JSON.parse(localStorage.getItem('filters'));
