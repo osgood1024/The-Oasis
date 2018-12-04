@@ -77,7 +77,7 @@ function loggedIn(){
 }
 function loggedOut(){
   localStorage.removeItem("user");
-  window.location.href='./favorites.html';
+  window.location.href='#';
 
 }
 if(localStorage.getItem("user") !== null){

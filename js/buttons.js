@@ -106,6 +106,8 @@ if(favs != null){
     if(localStorage.getItem("user") != null){
       window.location='./myFavorites.html';
       return false;
+    } else{
+      window.alert("Please log in before going to favorites!")
     }
   }
 }
