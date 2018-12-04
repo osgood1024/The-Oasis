@@ -119,6 +119,9 @@ $(document).ready(function() {
     document.getElementById('second-row').style.display = 'none';
     document.getElementById('noResults').style.display = 'inline-block';
   }
+
+  localStorage.setItem('choices',JSON.stringify(filterRooms));
+  localStorage.setItem('choiceIndexes',JSON.stringify(filterIndexes));
 });
 
 function search(){

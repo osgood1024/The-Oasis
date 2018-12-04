@@ -9,6 +9,20 @@
     <div class="nav-bar">
       <a href="./index.html"><b>Oasis</b></a>
     </div>
+
+    <script id="event-template" type="text/x-handlebars-template">
+      <div class="event">
+          <img class="event-image" src="./images/{{image}}.jpg" />
+          <div class="info" style="width:90%">
+            <h3><a href="./checkout.html">{{name}}</a></h3>
+            <p>
+                ${{price}} /hr
+                <br />
+                {{location}}
+            </p>
+          </div>
+        </div>
+    </script>
     <script id="template" type="text/x-handlebars-template">
       <div>
         <h1>Thank you for your purchase!</h1>
@@ -30,6 +44,9 @@
         </span>
       </div>
     </script>
+    <div id="event-details">
+
+    </div>
     <div id="details">
 
     </div>
