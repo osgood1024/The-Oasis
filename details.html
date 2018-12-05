@@ -157,13 +157,14 @@
         </div>
       </div>
     </div>
-    <div id="reviews" style="margin-left: 2%;margin-top: -4%;">
+    <div id="reviews" style="margin-top: -4% ;margin-left: 11%;">
       <span id="0" class="fa fa-star"></span>
       <span id="1" class="fa fa-star"></span>
       <span id="2"class="fa fa-star"></span>
       <span id="3"class="fa fa-star"></span>
       <span id="4"class="fa fa-star"></span>
-      <button onclick="document.getElementById('reviews').style.display='block'">Reviews</button>
+      <br/>
+      <button onclick="document.getElementById('reviews').style.display='block'"style="margin-left: 33px;">Reviews</button>
     </div>
     <div id="catering-modal" class="modal">
       <span onclick="document.getElementById('catering-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -229,20 +230,21 @@
       </div>
     </div>
     <div id="service-holder" class="service">
-      <h3>Add these additional services to your events. Click more for details</h3>
+      <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click more for details</h3>
 
-      <div id="service-column1">
+      <div id="service-column1"style="margin-left: 8%;">
         <button id="cateringBtn" onclick="document.getElementById('catering-modal').style.display='block'">Catering</button>
         <br />
         <button id="transportationBtn" onclick="document.getElementById('transportation-modal').style.display='block'">Transportation</button>
       </div>
-      <div id="service-column2">
+      <div id="service-column2" style ="margin-left: 40px;">
         <button id="entertainmentBtn" onclick="document.getElementById('entertainment-modal').style.display='block'">Entertainment</button>
         <br />
         <button id="plannerBtn" onclick="document.getElementById('planner-modal').style.display='block'">Event Planner</button>
       </div>
-
-      <div id="return-buttons" style="margin-left:20%">
+      <br/>
+      <br/>
+      <div id="return-buttons" style="margin-left:30%">
         <button onclick="goBack()">Go back</button>
         <button id="checkout" onclick="window.location.href='checkout.html'" style= "background-color: #419B21"><b>Proceed to checkout</b></button>
       </div>
