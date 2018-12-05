@@ -100,10 +100,13 @@
         <span>
           Date: <input type="date" id="date" />
           <br />
+          Time end: <input type="time" id="times"/>
+
           Hours: <input type="number" id="hours" min="1" max="24" />
           <br />
-          ${{price}} an hour
+          (${{price}}/ hr)
           <br />
+
 
           {{service-title}}
           <br />
@@ -118,6 +121,7 @@
           <br />
 
           {{service4}}
+          <br/ >
 
         </span>
       </div>
@@ -131,7 +135,7 @@
         <div>
           <ul>
             <li>
-              <input id="email" type="text" placeholder="Email" size="25px" />
+              <input id="name" type="text" placeholder="Name" size="25px" />
             </li>
             <li>
               <input id="phone" type="text" placeholder="Phone Number" />
@@ -152,14 +156,13 @@
             </li>
 
           </ul>
-          <button onClick="purchase()">Submit</button>
+          <button onClick="purchase()" style="margin-left:20%;background-color: forestgreen;color: white;">Book Now</button>
+          <br/>
+          <button onClick="window.location.href='details.html'"style="margin-left:20%;background-color: lightgrey;">Cancel</button>
         </div>
       </div>
     </div>
 
-
-    <button onclick="window.location.href='details.html'"style="
-    margin-left: 5%;">Go back</button>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/buttons.js"></script>
     <script src="js/checkout.js"></script>
