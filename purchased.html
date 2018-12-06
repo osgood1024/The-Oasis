@@ -24,9 +24,9 @@
         </div>
     </script>
     <script id="template" type="text/x-handlebars-template">
-      <div class = "event-info">
+      <div class = "event-info"style="margin-top: 5%;margin-left: -2%;">
         <h1 style=" margin-left: 8.5%;">Thank you for your purchase!</h1>
-        <span>
+        <span style="line-height: 1.5;">
           Total Price:
           <br />
           ${{price}}
@@ -35,6 +35,10 @@
           <br />
           {{date}}
           <br />
+          Time:
+          <br/>
+          {{times}}
+          <br/>
           Your contact info:
           <br />
           {{email}}
@@ -53,18 +57,20 @@
       </div>
     </script>
     <div style="display:flex">
-      <div style="width:25%" id="event-details">
+      <div style="width:25%;margin-left: 2%;margin-top: 2%;" id="event-details">
 
       </div>
       <div id="details">
 
       </div>
     </div>
-    <div align="center">
-      <h2>Purchase another location?</h2>
+    <div style="margin-left: 53%;margin-top: -1%;">
+      <h3>Purchase another location?</h3>
     <button onclick="window.location.href='index.html'"style="
-    width: 12%;
-    height: 20px;">Return to Home</button>
+    width: 20%;
+    height: 20px;
+    margin-left: 15%;
+    ">Return to Home</button>
     </div>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/purchased.js"></script>
