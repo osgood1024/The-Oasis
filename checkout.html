@@ -96,71 +96,74 @@
             </p>
           </div>
         </div>
-      <div class="event-info" style="width:25%">
-        <span>
-          Date: <input type="date" id="date" />
-          <br />
-          Time end: <input type="time" id="times"/>
-          <br/>
-          Hours: <input type="number" id="hours" min="1" max="24" />
-          <br />
-          (${{price}}/ hr)
-          <br />
-          {{service-title}}
-          <br />
+      <div class="event-info" style="display:table">
+        <div>
+          <span>
+            Date: <input type="date" id="date" />
+            <br />
+            Time end: <input type="time" id="times"/>
+            <br/>
+            Hours: <input type="number" id="hours" min="1" max="24" />
+            <br />
+            (${{price}}/ hr)
+            <br />
+            {{service-title}}
+            <br />
 
-          {{service1}}
-          <br />
+            {{service1}}
+            <br />
 
-          {{service2}}
-          <br />
+            {{service2}}
+            <br />
 
-          {{service3}}
-          <br />
+            {{service3}}
+            <br />
 
-          {{service4}}
-          <br/ >
+            {{service4}}
+            <br/ >
 
-        </span>
+          </span>
+        </div>
+
+        <div class="checkout-info" style="display:table">
+          <h5 id="notsignedin" style="display:none">You will need to log in before purchase</h5>
+          <div style="display: inherit;">
+          <h2 style="margin:0px">Begin Checkout</h2>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <input id="name" type="text" placeholder="Name" size="25px" />
+              </li>
+              <li>
+                <input id="phone" type="text" placeholder="Phone Number" />
+              </li>
+            </ul>
+            <div>
+              <h2 style="margin:0px;margin-top: 10%;">Payment</h2>
+            </div>
+            <ul>
+              <li>
+                <input id="card" type="text" placeholder="Card Number" />
+              </li>
+              <li>
+                <input id="exp" type="datetime" placeholder="Expiration Date" />
+              </li>
+              <li>
+                <input id="ccv" type="text" placeholder="cvv" />
+              </li>
+            </ul>
+            <button onClick="purchase()" style="margin-left:20%;background-color: forestgreen;color: white;height: 30px;width: 125px;"
+            >Book Now</button>
+            <br/>
+            <br/>
+            <button onClick="window.location.href='details.html'"style="margin-left:20%;background-color: lightgrey;height: 30px;width: 125px;"
+            >Cancel</button>
+          </div>
+        </div>
       </div>
     </script>
     <div id="details" class="checkout" style="display:flex">
-      <div class="checkout-info">
-        <h5 id="notsignedin" style="display:none">You will need to log in before purchase</h5>
-        <div style="display: inherit;">
-        <h2 style="margin:0px;margin-top: 20%;">Begin Checkout</h2>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <input id="name" type="text" placeholder="Name" size="25px" />
-            </li>
-            <li>
-              <input id="phone" type="text" placeholder="Phone Number" />
-            </li>
-          </ul>
-          <div>
-            <h2 style="margin:0px;margin-top: 10%;">Payment</h2>
-          </div>
-          <ul>
-            <li>
-              <input id="card" type="text" placeholder="Card Number" />
-            </li>
-            <li>
-              <input id="exp" type="datetime" placeholder="Expiration Date" />
-            </li>
-            <li>
-              <input id="ccv" type="text" placeholder="cvv" />
-            </li>
-          </ul>
-          <button onClick="purchase()" style="margin-left:20%;background-color: forestgreen;color: white;height: 30px;width: 125px;"
-          >Book Now</button>
-          <br/>
-          <br/>
-          <button onClick="window.location.href='details.html'"style="margin-left:20%;background-color: lightgrey;height: 30px;width: 125px;"
-          >Cancel</button>
-        </div>
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery.js"></script>

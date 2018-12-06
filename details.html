@@ -95,13 +95,30 @@
       <div class="event">
         <img class="event-image" src="./images/{{image}}.jpg" />
         <div class="info">
-          <h3>{{name}}</h3>
-          <p>
-              ${{price}} /hr
-              <br />
-              {{location}}
-          </p>
+            <h3>{{name}}</h3>
+          <div style="display:flex">
+            <div>
+              <p>
+                  ${{price}} /hr
+                  <br />
+                  {{location}}
+              </p>
+            </div>
+
+            <div id="reviews">
+              <span id="0" class="fa fa-star"></span>
+              <span id="1" class="fa fa-star"></span>
+              <span id="2"class="fa fa-star"></span>
+              <span id="3"class="fa fa-star"></span>
+              <span id="4"class="fa fa-star"></span>
+              <br/>
+              <button onclick="document.getElementById('reviews').style.display='block'"style="margin-left: 33px;">Reviews</button>
+            </div>
+          </div>
+
+
         </div>
+
       </div>
       <div class="event-info">
         <span>
@@ -121,135 +138,129 @@
       </div>
     </div>
   </script>
-  <div id="details" style="display:flex">
+  <div>
+    <div id="details" style="display:flex">
 
-  </div>
-
-  <div id="moreDetails" >
-    <div id="reviews" class="modal">
-      <span onclick="document.getElementById('reviews').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <div class="modal-content">
-        <div class="container">
-          <h1>Reviews</h1>
-          <span id="0-modal" class="fa fa-star"></span>
-          <span id="1-modal" class="fa fa-star"></span>
-          <span id="2-modal"class="fa fa-star"></span>
-          <span id="3-modal"class="fa fa-star"></span>
-          <span id="4-modal"class="fa fa-star"></span>
-          <h3>Really hard to find someplace to sit</h3>
-          <div id="myReview" style="display:none">
-            <span id="0-review" class="fa fa-star"></span>
-            <span id="1-review" class="fa fa-star"></span>
-            <span id="2-review"class="fa fa-star"></span>
-            <span id="3-review"class="fa fa-star"></span>
-            <span id="4-review"class="fa fa-star"></span>
-            <h3 id="myReviewh3"></h3>
+    </div>
+    <div id="moreDetails" >
+      <div id="reviews" class="modal">
+        <span onclick="document.getElementById('reviews').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="modal-content">
+          <div class="container">
+            <h1>Reviews</h1>
+            <span id="0-modal" class="fa fa-star"></span>
+            <span id="1-modal" class="fa fa-star"></span>
+            <span id="2-modal"class="fa fa-star"></span>
+            <span id="3-modal"class="fa fa-star"></span>
+            <span id="4-modal"class="fa fa-star"></span>
+            <h3>Really hard to find someplace to sit</h3>
+            <div id="myReview" style="display:none">
+              <span id="0-review" class="fa fa-star"></span>
+              <span id="1-review" class="fa fa-star"></span>
+              <span id="2-review"class="fa fa-star"></span>
+              <span id="3-review"class="fa fa-star"></span>
+              <span id="4-review"class="fa fa-star"></span>
+              <h3 id="myReviewh3"></h3>
+            </div>
+            <br />
+            How many stars?
+            <input id="reviewStars" type="number" placeholder="5" max="5" min= "0" value="0" line-height:/>
+            <br />
+            <br/>
+            <input id="reviewText" placeholder="Your Review here"type="text" style="width: 300px;height: 50px;" value=""/>
+            <br />
+            <br/>
+            <button onclick="submitted()">Submit a review</button>
           </div>
-          <br />
-          How many stars?
-          <input id="reviewStars" type="number" placeholder="5" max="5" min= "0" value="0" line-height:/>
-          <br />
-          <br/>
-          <input id="reviewText" placeholder="Your Review here"type="text" style="width: 300px;height: 50px;" value=""/>
-          <br />
-          <br/>
-          <button onclick="submitted()">Submit a review</button>
         </div>
       </div>
-    </div>
-    <div id="reviews" style="margin-top: -4% ;margin-left: 11%;">
-      <span id="0" class="fa fa-star"></span>
-      <span id="1" class="fa fa-star"></span>
-      <span id="2"class="fa fa-star"></span>
-      <span id="3"class="fa fa-star"></span>
-      <span id="4"class="fa fa-star"></span>
-      <br/>
-      <button onclick="document.getElementById('reviews').style.display='block'"style="margin-left: 33px;">Reviews</button>
-    </div>
-    <div id="catering-modal" class="modal">
-      <span onclick="document.getElementById('catering-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <div class="modal-content">
-        <div class="container">
-          <h1>Catering</h1>
-          <h3 id="cateringPrice">$200</h3>
-          <p>
-            Enjoy delicious catering from the following restaurants Oasis has teamed up with!
-            <br />
-              Chick Fil A <br />
-              Contact chickfila@gmail.com or (702)(263)(2737) for more information
-          </p>
-          <button id="catering" onclick="added(this.id)">Add to cart</button>
-        </div>
-      </div>
-    </div>
-    <div id="transportation-modal" class="modal">
-      <span onclick="document.getElementById('transportation-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <div class="modal-content">
-        <div class="container">
-          <h1>Transportation</h1>
-          <h3 id="transportationPrice">$250</h3>
-          <p>
-            Treat you guests and yourself with transportation services! <br />
-            Mario’s Party Limo & Tours → $250 per limo <br />
-            	Contact jimhalbert@yahoo.com or (627)(238)(2731) for more information
-          </p>
-          <button id="transportation" onclick="added(this.id)">Add to cart</button>
-        </div>
-      </div>
-    </div>
-    <div id="entertainment-modal" class="modal">
-      <span onclick="document.getElementById('entertainment-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <div class="modal-content">
-        <div class="container">
-          <h1>Entertainment</h1>
-          <h3 id="entertainmentPrice">$500</h3>
-          <p>
-            Save yourself the hassle of searching for entertainment services by hiring our favorite performers, comedians, and more!
-            <br />
-            Art Tatum (performer, jazz) <br />
-            Contact: arttatum@gmail.com for more information
-          </p>
-          <button id="entertainment"  onclick="added(this.id)">Add to cart</button>
-        </div>
-      </div>
-    </div>
-    <div id="planner-modal" class="modal">
-      <span onclick="document.getElementById('planner-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <div class="modal-content">
-        <div class="container">
-          <h1>Planner</h1>
-          <h3 id="plannerPrice">$100</h3>
-          <p>
-            Save yourself the stress of your planning your event by hiring one of Oasis’s own event planners!
-            <br />
-            Amanda Hawk Event Planning and Co. → $100 per event <br />
-            Contact: amandahawk@yahoo.com for more information
-          </p>
-          <button id="planner" onclick="added(this.id)">Add to cart</button>
-        </div>
-      </div>
-    </div>
-    <div id="service-holder" class="service">
-      <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click more for details</h3>
 
-      <div id="service-column1"style="margin-left: 8%;">
-        <button id="cateringBtn" onclick="document.getElementById('catering-modal').style.display='block'">Catering</button>
-        <br />
-        <button id="transportationBtn" onclick="document.getElementById('transportation-modal').style.display='block'">Transportation</button>
+      <div id="catering-modal" class="modal">
+        <span onclick="document.getElementById('catering-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="modal-content">
+          <div class="container">
+            <h1>Catering</h1>
+            <h3 id="cateringPrice">$200</h3>
+            <p>
+              Enjoy delicious catering from the following restaurants Oasis has teamed up with!
+              <br />
+                Chick Fil A <br />
+                Contact chickfila@gmail.com or (702)(263)(2737) for more information
+            </p>
+            <button id="catering" onclick="added(this.id)">Add to cart</button>
+          </div>
+        </div>
       </div>
-      <div id="service-column2" style ="margin-left: 40px;">
-        <button id="entertainmentBtn" onclick="document.getElementById('entertainment-modal').style.display='block'">Entertainment</button>
-        <br />
-        <button id="plannerBtn" onclick="document.getElementById('planner-modal').style.display='block'">Event Planner</button>
+      <div id="transportation-modal" class="modal">
+        <span onclick="document.getElementById('transportation-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="modal-content">
+          <div class="container">
+            <h1>Transportation</h1>
+            <h3 id="transportationPrice">$250</h3>
+            <p>
+              Treat you guests and yourself with transportation services! <br />
+              Mario’s Party Limo & Tours → $250 per limo <br />
+                Contact jimhalbert@yahoo.com or (627)(238)(2731) for more information
+            </p>
+            <button id="transportation" onclick="added(this.id)">Add to cart</button>
+          </div>
+        </div>
       </div>
-      <br/>
-      <br/>
-      <div id="return-buttons" style="margin-left:30%">
-        <button onclick="goBack()">Go back</button>
-        <button id="checkout" onclick="window.location.href='checkout.html'" style= "background-color: #419B21"><b>Proceed to checkout</b></button>
+      <div id="entertainment-modal" class="modal">
+        <span onclick="document.getElementById('entertainment-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="modal-content">
+          <div class="container">
+            <h1>Entertainment</h1>
+            <h3 id="entertainmentPrice">$500</h3>
+            <p>
+              Save yourself the hassle of searching for entertainment services by hiring our favorite performers, comedians, and more!
+              <br />
+              Art Tatum (performer, jazz) <br />
+              Contact: arttatum@gmail.com for more information
+            </p>
+            <button id="entertainment"  onclick="added(this.id)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div id="planner-modal" class="modal">
+        <span onclick="document.getElementById('planner-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div class="modal-content">
+          <div class="container">
+            <h1>Planner</h1>
+            <h3 id="plannerPrice">$100</h3>
+            <p>
+              Save yourself the stress of your planning your event by hiring one of Oasis’s own event planners!
+              <br />
+              Amanda Hawk Event Planning and Co. → $100 per event <br />
+              Contact: amandahawk@yahoo.com for more information
+            </p>
+            <button id="planner" onclick="added(this.id)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div id="service-holder" class="service">
+        <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click more for details</h3>
+
+        <div id="service-column1"style="margin-left: 8%;">
+          <button id="cateringBtn" onclick="document.getElementById('catering-modal').style.display='block'">Catering</button>
+          <br />
+          <button id="transportationBtn" onclick="document.getElementById('transportation-modal').style.display='block'">Transportation</button>
+        </div>
+        <div id="service-column2" style ="margin-left: 40px;">
+          <button id="entertainmentBtn" onclick="document.getElementById('entertainment-modal').style.display='block'">Entertainment</button>
+          <br />
+          <button id="plannerBtn" onclick="document.getElementById('planner-modal').style.display='block'">Event Planner</button>
+        </div>
+        <br/>
+        <br/>
+        <div id="return-buttons" style="margin-left:30%">
+          <button onclick="goBack()">Go back</button>
+          <button id="checkout" onclick="window.location.href='checkout.html'" style= "background-color: #419B21"><b>Proceed to checkout</b></button>
+        </div>
       </div>
     </div>
   </div>
+
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/details.js"></script>

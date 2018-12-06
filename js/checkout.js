@@ -61,7 +61,7 @@ $(document).ready(function() {
   if(user != null){
     em.value = user['email'];
   }else{
-    document.getElementById('notsignedin').style.display="inline";
+    document.getElementById('notsignedin').style.display="inherit";
   }
 
 });
