@@ -81,7 +81,7 @@ function purchase(){
 
   var p = parseInt(result['price'].replace(",","")) * parseInt($('#hours').val());
   var date = $('#date').val();
-  var price = p;
+  var price = p + total;
   var hours = $('#hours').val();
   var email = $('#name').val();
   var phone = $('#phone').val();
@@ -91,7 +91,7 @@ function purchase(){
 
   result['price'] = p;
   result['date'] = date;
-  var paymentInfo ={'date':date, 'hours':hours, 'price':p,
+  var paymentInfo ={'date':date, 'hours':hours, 'price':price,
           'email':email,'phone':phone, 'card':card, 'exp':exp, 'ccv':ccv};
 
   localStorage.setItem('payment', JSON.stringify(paymentInfo));

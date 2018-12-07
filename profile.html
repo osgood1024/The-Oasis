@@ -22,11 +22,11 @@
     <script id="results-template" type="text/x-handlebars-template">
       <div class="event">
 
-        <a href="#" id={{id}} onclick="getDetails(this.id)">
+        <a href="#" id={{id}} onclick="getMyDetails(this.id)">
           <img class="event-image"  src="./images/{{image}}.jpg" />
         </a>
         <div class="info">
-          <h3><a id={{id}} href="#" onclick="getDetails(this.id)">{{name}}</a></h3>
+          <h3><a id={{id}} href="#" onclick="#">{{name}}</a></h3>
           <p>
             ${{price}}<br />
             {{date}}

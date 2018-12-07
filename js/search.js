@@ -200,6 +200,8 @@ function search(){
   }
 
   localStorage.setItem('filterRooms',JSON.stringify(results));
+  localStorage.setItem('filterIndexes',JSON.stringify(resultsIndex));
+
   window.location.href='./search.html';
 }
 
