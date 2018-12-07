@@ -1,4 +1,5 @@
 var result;
+var total = 0;
 
 /* Set up site */
 $(document).ready(function() {
@@ -57,7 +58,7 @@ $(document).ready(function() {
 
   // Get user and email field in the document
   var user = JSON.parse(localStorage.getItem('user'));
-  var em = document.getElementById('email');
+  var em = document.getElementById('name');
   if(user != null){
     em.value = user['email'];
   }else{
@@ -81,7 +82,8 @@ function purchase(){
   var p = parseInt(result['price'].replace(",","")) * parseInt($('#hours').val());
   var date = $('#date').val();
   var price = p;
-  var email = $('#email').val();
+  var hours = $('#hours').val();
+  var email = $('#name').val();
   var phone = $('#phone').val();
   var card =$('#card').val();
   var exp = $('#exp').val();

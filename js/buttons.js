@@ -175,16 +175,30 @@ function stateChanged(){
   if(localStorage.getItem('user') != null){
 
     /* Change displays */
-    loginbtn.style.display='none';
-    signupbtn.style.display='none';
-    btnLogOut.style.display='inline-block';
+    if(loginbtn != null){
+      loginbtn.style.display='none';
+    }
+    if(signupbtn != null){
+      signupbtn.style.display='none';
+    }
+    if(btnLogOut != null){
+      btnLogOut.style.display='inline-block';
+    }
     proLink.style.display='inline';
 
   } else{
     /* Change displays */
-    loginbtn.style.display='inline-block';
-    signupbtn.style.display='inline-block';
-    btnLogOut.style.display='none';
+    /* Change displays */
+    if(loginbtn != null){
+      loginbtn.style.display='inline-block';
+    }
+    if(signupbtn != null){
+      signupbtn.style.display='inline-block';
+    }
+    if(btnLogOut != null){
+      btnLogOut.style.display='none';
+    }
+
     proLink.style.display='none';
 
   }
@@ -201,21 +215,31 @@ $(document).ready(function() {
   if(localStorage.getItem('user') != null){
 
     /* Change displays */
-    loginbtn.style.display='none';
-    signupbtn.style.display='none';
-    btnLogOut.style.display='inline-block';
+    if(loginbtn != null){
+      loginbtn.style.display='none';
+    }
+    if(signupbtn != null){
+      signupbtn.style.display='none';
+    }
+    if(btnLogOut != null){
+      btnLogOut.style.display='inline-block';
+    }
     proLink.style.display='inline';
 
 
   } else{
 
     /* Change displays */
-    loginbtn.style.display='inline-block';
-    signupbtn.style.display='inline-block';
-    btnLogOut.style.display='none';
+    if(loginbtn != null){
+      loginbtn.style.display='inline-block';
+    }
+    if(signupbtn != null){
+      signupbtn.style.display='inline-block';
+    }
+    if(btnLogOut != null){
+      btnLogOut.style.display='none';
+    }
     proLink.style.display='none';
-
-
   }
 
 });

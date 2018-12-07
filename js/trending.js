@@ -4,8 +4,10 @@ $(document).ready(function() {
   var indexes = JSON.parse(localStorage.getItem('indexes'));
 
   var rIndex = parseInt(localStorage.getItem('rIndex'));
-  localStorage.setItem('filterRooms',JSON.stringify(availableRooms[rIndex]));;
+  localStorage.setItem('filterRooms',JSON.stringify(availableRooms[rIndex]));
   localStorage.setItem('filterIndexes',JSON.stringify(indexes[rIndex]));
+  localStorage.setItem('choices',JSON.stringify(availableRooms[rIndex]));
+  localStorage.setItem('choiceIndexes',JSON.stringify(indexes[rIndex]));
 
   var source   = $("#favorites-template").html();
   var template = Handlebars.compile(source);

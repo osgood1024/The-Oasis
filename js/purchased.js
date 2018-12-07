@@ -9,6 +9,7 @@ $(document).ready(function() {
   var result ={
     'date':paymentInfo['date'],
     'price':paymentInfo['price'],
+    'hours':paymentInfo['hours'],
     'email':paymentInfo['email'],
     'phone':paymentInfo['phone'],
     'card':replacementCard,
