@@ -92,7 +92,7 @@
 
   <script id="details-template" type="text/x-handlebars-template">
     <div style="display:inherit">
-      <div class="event">
+      <div class="event" style="width:40%">
         <img class="event-image" src="./images/{{image}}.jpg" />
         <div class="info">
             <h3>{{name}}</h3>
@@ -138,11 +138,11 @@
       </div>
     </div>
   </script>
-  <div>
+  <div style="margin: 2% 15%">
     <div id="details" style="display:flex">
 
     </div>
-    <div id="moreDetails" >
+    <div id="moreDetails" style="text-align:center">
       <div id="reviews" class="modal">
         <span onclick="document.getElementById('reviews').style.display='none'" class="close" title="Close Modal">&times;</span>
         <div class="modal-content">
@@ -240,19 +240,19 @@
       </div>
       <div id="service-holder" class="service"style="line-height: 2;">
         <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click for more details</h3>
-        <div id="service-column1"style="margin-left: 8%;">
+        <div id="service-column1"style="">
           <button id="cateringBtn" onclick="document.getElementById('catering-modal').style.display='block'">Catering</button>
           <br />
           <button id="transportationBtn" onclick="document.getElementById('transportation-modal').style.display='block'">Transportation</button>
         </div>
-        <div id="service-column2" style ="margin-left: 40px;">
+        <div id="service-column2" >
           <button id="entertainmentBtn" onclick="document.getElementById('entertainment-modal').style.display='block'">Entertainment</button>
           <br />
           <button id="plannerBtn" onclick="document.getElementById('planner-modal').style.display='block'">Event Planner</button>
         </div>
         <br/>
         <br/>
-        <div id="return-buttons" style="margin-left:35%">
+        <div id="return-buttons">
           <button id="checkout" onclick="window.location.href='checkout.html'" style="background-color: #009688;color:white ;border-radius: 10px;"><b>Proceed to checkout</b></button>
           <br/>
           <button onclick="goBack()"style="background-color: rgba(153, 153, 153, 0.2);border-radius: 10px; width: 97% ;">Go back</button>
