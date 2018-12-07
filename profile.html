@@ -22,7 +22,7 @@
     <script id="results-template" type="text/x-handlebars-template">
       <div class="event">
 
-        <a href="#" id={{id}} onclick="getMyDetails(this.id)">
+        <a href="#" id={{id}} onclick="#">
           <img class="event-image"  src="./images/{{image}}.jpg" />
         </a>
         <div class="info">
@@ -33,7 +33,6 @@
           </p>
           <div>
             <button id={{id}}Rem onclick="remove(this.id)">Cancel Purchase</button>
-            <button id={{id}} onclick="getMyDetails(this.id)">More Details</button>
           </div>
         </div>
       </div>
@@ -51,18 +50,17 @@
     <script id="remove-template" type="text/x-handlebars-template">
       <div class="event">
 
-        <a href="#" id={{id}} onclick="getDetails(this.id)">
+        <a href="#" id={{id}} onclick="#">
           <img class="event-image"  src="./images/{{image}}.jpg" />
         </a>
         <div class="info">
-          <h3><a id={{id}} href="#" onclick="getDetails(this.id)">{{name}}</a></h3>
+          <h3><a id={{id}} href="#" onclick="#">{{name}}</a></h3>
           <p>
             ${{price}} /hr<br />
             {{location}}
           </p>
           <div>
             <button id={{id}}List onclick="removeList(this.id)">Remove from Listed</button>
-            <button id={{id}} onclick="getDetails(this.id)">More Details</button>
           </div>
         </div>
       </div>

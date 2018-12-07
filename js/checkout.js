@@ -89,7 +89,7 @@ function purchase(){
   var exp = $('#exp').val();
   var ccv = $('#ccv').val();
 
-  result['price'] = p;
+  result['price'] = p+total;
   result['date'] = date;
   var paymentInfo ={'date':date, 'hours':hours, 'price':price,
           'email':email,'phone':phone, 'card':card, 'exp':exp, 'ccv':ccv};
