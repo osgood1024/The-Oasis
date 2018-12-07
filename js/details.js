@@ -170,7 +170,7 @@ function added(id){
     }
     localStorage.setItem('extras',JSON.stringify(extras));
     document.getElementById(id).innerHTML = "Add to cart";
-    document.getElementById(id+"Btn").style.backgroundColor=none;
+    document.getElementById(id+"Btn").style.backgroundColor="none";
   }
 
   //return to review screen

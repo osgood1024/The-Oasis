@@ -153,7 +153,7 @@
             <span id="2-modal"class="fa fa-star"></span>
             <span id="3-modal"class="fa fa-star"></span>
             <span id="4-modal"class="fa fa-star"></span>
-            <h3>Really hard to find someplace to sit</h3>
+            <h3>Really hard to find some place to sit</h3>
             <div id="myReview" style="display:none">
               <span id="0-review" class="fa fa-star"></span>
               <span id="1-review" class="fa fa-star"></span>
@@ -238,9 +238,8 @@
           </div>
         </div>
       </div>
-      <div id="service-holder" class="service">
-        <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click more for details</h3>
-
+      <div id="service-holder" class="service"style="line-height: 2;">
+        <h3 style="margin-left: 5%; margin-top: 40px;">Add these additional services to your events. Click for more details</h3>
         <div id="service-column1"style="margin-left: 8%;">
           <button id="cateringBtn" onclick="document.getElementById('catering-modal').style.display='block'">Catering</button>
           <br />
@@ -253,9 +252,10 @@
         </div>
         <br/>
         <br/>
-        <div id="return-buttons" style="margin-left:30%">
-          <button onclick="goBack()">Go back</button>
-          <button id="checkout" onclick="window.location.href='checkout.html'" style= "background-color: #419B21"><b>Proceed to checkout</b></button>
+        <div id="return-buttons" style="margin-left:35%">
+          <button id="checkout" onclick="window.location.href='checkout.html'" style="background-color: #009688;color:white ;border-radius: 10px;"><b>Proceed to checkout</b></button>
+          <br/>
+          <button onclick="goBack()"style="background-color: rgba(153, 153, 153, 0.2);border-radius: 10px; width: 97% ;">Go back</button>
         </div>
       </div>
     </div>
