@@ -7,11 +7,11 @@ Oasis is a Web app that offers or reserves space for an event.We believe that of
 check out the live demo [Oasis](https://sergiov98.github.io/Oasis/index.html)
 
 ## More information
-Find more in depth information [research demo](https://www.osgoodgunawan.me/oasis)
+Find more in depth information [research demo](https://www.osgood1024.com/oasis)
 
 ## Contact
 - [linkedIn](https://www.linkedin.com/in/osgood-gunawan-973a5993/)
-- [personal website](https://www.osgoodgunawan.me/)
+- [personal website](https://www.osgood1024.com/)
 - [twitter](https://twitter.com/osgoodgunawan)
 - [email](https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=osgoodgunawan@hotmail.com)
 
